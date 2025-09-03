@@ -48,17 +48,30 @@ const GenerateCourseButton = ({
             content: "You are a helpful assistant that generates detailed course outlines based on user instructions."
           }, {
             role: "user",
-            content: `Create a detailed course outline based on this instruction: ${instruction}. 
+            content: `Create a detailed course content based on this instruction: ${instruction}. 
               Please be rigid and make sure that the result are using JSON format below:
 
               [
-                  {
-                      "title": "title of the section",
-                      "subsections": [
-                          {"title": "title of the subsection 1 "},
-                          {"title": "title of the subsection 2"}
+                {
+                  "title": "title of the section",
+                  "subsections": [
+                    {
+                      "title": "title of the subsection 1",
+                      "units": [
+                        {
+                          "title": "title of the unit 1",
+                          "content_title": "title of the content",
+                          "content": "detailed content"
+                        },
+                        {
+                          "title": "title of the unit 2",
+                          "content_title": "title of the content",
+                          "content": "detailed content"
+                        }
                       ]
-                  }
+                    }
+                  ]
+                }
               ]
               
               `
