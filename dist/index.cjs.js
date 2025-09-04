@@ -1,6 +1,6 @@
 'use strict';
 
-var React = require('react');
+var React$1 = require('react');
 var paragon = require('@openedx/paragon');
 var ReactMarkdown = require('react-markdown');
 var frontendPlatform = require('@edx/frontend-platform');
@@ -11,12 +11,12 @@ const GenerateCourseButton = ({
   course = "Cs01",
   run = "2022"
 }) => {
-  const [open, setOpen] = React.useState(false);
-  const [instruction, setInstruction] = React.useState("");
-  const [outline, setOutline] = React.useState("");
-  const [loading, setLoading] = React.useState(false);
-  const [error, setError] = React.useState("");
-  const [success, setSuccess] = React.useState(false);
+  const [open, setOpen] = React$1.useState(false);
+  const [instruction, setInstruction] = React$1.useState("");
+  const [outline, setOutline] = React$1.useState("");
+  const [loading, setLoading] = React$1.useState(false);
+  const [error, setError] = React$1.useState("");
+  const [success, setSuccess] = React$1.useState(false);
   const resetForm = () => {
     setInstruction("");
     setOutline("");
@@ -142,55 +142,55 @@ const GenerateCourseButton = ({
       setLoading(false);
     }
   };
-  return /*#__PURE__*/React.createElement(React.Fragment, null, /*#__PURE__*/React.createElement(paragon.Button, {
+  return /*#__PURE__*/React$1.createElement(React$1.Fragment, null, /*#__PURE__*/React$1.createElement(paragon.Button, {
     variant: "outline-primary",
     onClick: () => setOpen(true)
-  }, "Generate Course With AI"), /*#__PURE__*/React.createElement(paragon.StandardModal, {
+  }, "Generate Course With AI"), /*#__PURE__*/React$1.createElement(paragon.StandardModal, {
     title: "Generate Course With AI",
     isOpen: open,
     onClose: () => {
       setOpen(false);
       resetForm();
     },
-    footerNode: loading ? null : success ? /*#__PURE__*/React.createElement(paragon.ActionRow, null, /*#__PURE__*/React.createElement(paragon.ActionRow.Spacer, null), /*#__PURE__*/React.createElement(paragon.Button, {
+    footerNode: loading ? null : success ? /*#__PURE__*/React$1.createElement(paragon.ActionRow, null, /*#__PURE__*/React$1.createElement(paragon.ActionRow.Spacer, null), /*#__PURE__*/React$1.createElement(paragon.Button, {
       variant: "tertiary",
       onClick: resetForm
-    }, "Generate Another"), /*#__PURE__*/React.createElement(paragon.Button, {
+    }, "Generate Another"), /*#__PURE__*/React$1.createElement(paragon.Button, {
       onClick: () => {
         setOpen(false);
         resetForm();
         window.location.reload();
       }
-    }, "Close")) : /*#__PURE__*/React.createElement(paragon.ActionRow, null, /*#__PURE__*/React.createElement(paragon.ActionRow.Spacer, null), /*#__PURE__*/React.createElement(paragon.Button, {
+    }, "Close")) : /*#__PURE__*/React$1.createElement(paragon.ActionRow, null, /*#__PURE__*/React$1.createElement(paragon.ActionRow.Spacer, null), /*#__PURE__*/React$1.createElement(paragon.Button, {
       variant: "tertiary",
       onClick: () => {
         setOpen(false);
         resetForm();
       }
-    }, "Cancel"), /*#__PURE__*/React.createElement(paragon.Button, {
+    }, "Cancel"), /*#__PURE__*/React$1.createElement(paragon.Button, {
       onClick: handleSubmit
     }, "Submit")),
     isOverflowVisible: false
-  }, loading ? /*#__PURE__*/React.createElement("div", {
+  }, loading ? /*#__PURE__*/React$1.createElement("div", {
     style: {
       textAlign: 'center',
       padding: '40px 20px'
     }
-  }, /*#__PURE__*/React.createElement(paragon.Spinner, {
+  }, /*#__PURE__*/React$1.createElement(paragon.Spinner, {
     animation: "border",
     size: "lg"
-  }), /*#__PURE__*/React.createElement("p", {
+  }), /*#__PURE__*/React$1.createElement("p", {
     style: {
       marginTop: '20px',
       fontSize: '16px',
       textAlign: 'center'
     }
-  }, "Please wait for a moment.")) : success ? /*#__PURE__*/React.createElement("div", {
+  }, "Please wait for a moment.")) : success ? /*#__PURE__*/React$1.createElement("div", {
     style: {
       textAlign: 'center',
       padding: '40px 20px'
     }
-  }, /*#__PURE__*/React.createElement(paragon.Alert, {
+  }, /*#__PURE__*/React$1.createElement(paragon.Alert, {
     variant: "success",
     style: {
       display: 'flex',
@@ -199,7 +199,7 @@ const GenerateCourseButton = ({
       gap: '10px',
       textAlign: 'center'
     }
-  }, /*#__PURE__*/React.createElement("svg", {
+  }, /*#__PURE__*/React$1.createElement("svg", {
     fill: "#28a745",
     xmlns: "http://www.w3.org/2000/svg",
     width: "100px",
@@ -207,14 +207,14 @@ const GenerateCourseButton = ({
     viewBox: "0 0 52 52",
     enableBackground: "new 0 0 52 52",
     xmlSpace: "preserve"
-  }, /*#__PURE__*/React.createElement("path", {
+  }, /*#__PURE__*/React$1.createElement("path", {
     d: "M26,2C12.7,2,2,12.7,2,26s10.7,24,24,24s24-10.7,24-24S39.3,2,26,2z M39.4,20L24.1,35.5 c-0.6,0.6-1.6,0.6-2.2,0L13.5,27c-0.6-0.6-0.6-1.6,0-2.2l2.2-2.2c0.6-0.6,1.6-0.6,2.2,0l4.4,4.5c0.4,0.4,1.1,0.4,1.5,0L35,15.5 c0.6-0.6,1.6-0.6,2.2,0l2.2,2.2C40.1,18.3,40.1,19.3,39.4,20z"
-  })), /*#__PURE__*/React.createElement("p", {
+  })), /*#__PURE__*/React$1.createElement("p", {
     style: {
       marginTop: '10px',
       textAlign: 'center'
     }
-  }, "Your outline was generated successfully")), outline && /*#__PURE__*/React.createElement("div", {
+  }, "Your outline was generated successfully")), outline && /*#__PURE__*/React$1.createElement("div", {
     style: {
       marginTop: '20px',
       padding: '15px',
@@ -222,17 +222,17 @@ const GenerateCourseButton = ({
       borderRadius: '5px',
       textAlign: 'left'
     }
-  }, /*#__PURE__*/React.createElement("h5", null, "Generated Course Outline:"), /*#__PURE__*/React.createElement("div", {
+  }, /*#__PURE__*/React$1.createElement("h5", null, "Generated Course Outline:"), /*#__PURE__*/React$1.createElement("div", {
     style: {
       fontSize: '14px',
       lineHeight: '1.6',
       color: '#333'
     }
-  }, /*#__PURE__*/React.createElement(ReactMarkdown, {
+  }, /*#__PURE__*/React$1.createElement(ReactMarkdown, {
     components: {
       h1: ({
         children
-      }) => /*#__PURE__*/React.createElement("h1", {
+      }) => /*#__PURE__*/React$1.createElement("h1", {
         style: {
           color: '#2c3e50',
           borderBottom: '2px solid #3498db',
@@ -241,7 +241,7 @@ const GenerateCourseButton = ({
       }, children),
       h2: ({
         children
-      }) => /*#__PURE__*/React.createElement("h2", {
+      }) => /*#__PURE__*/React$1.createElement("h2", {
         style: {
           color: '#34495e',
           marginTop: '20px'
@@ -249,7 +249,7 @@ const GenerateCourseButton = ({
       }, children),
       h3: ({
         children
-      }) => /*#__PURE__*/React.createElement("h3", {
+      }) => /*#__PURE__*/React$1.createElement("h3", {
         style: {
           color: '#7f8c8d',
           marginTop: '15px'
@@ -257,14 +257,14 @@ const GenerateCourseButton = ({
       }, children),
       strong: ({
         children
-      }) => /*#__PURE__*/React.createElement("strong", {
+      }) => /*#__PURE__*/React$1.createElement("strong", {
         style: {
           color: '#2c3e50'
         }
       }, children),
       code: ({
         children
-      }) => /*#__PURE__*/React.createElement("code", {
+      }) => /*#__PURE__*/React$1.createElement("code", {
         style: {
           backgroundColor: '#ecf0f1',
           padding: '2px 4px',
@@ -274,7 +274,7 @@ const GenerateCourseButton = ({
       }, children),
       ul: ({
         children
-      }) => /*#__PURE__*/React.createElement("ul", {
+      }) => /*#__PURE__*/React$1.createElement("ul", {
         style: {
           margin: '10px 0',
           paddingLeft: '20px'
@@ -282,7 +282,7 @@ const GenerateCourseButton = ({
       }, children),
       ol: ({
         children
-      }) => /*#__PURE__*/React.createElement("ol", {
+      }) => /*#__PURE__*/React$1.createElement("ol", {
         style: {
           margin: '10px 0',
           paddingLeft: '20px'
@@ -290,37 +290,37 @@ const GenerateCourseButton = ({
       }, children),
       li: ({
         children
-      }) => /*#__PURE__*/React.createElement("li", {
+      }) => /*#__PURE__*/React$1.createElement("li", {
         style: {
           margin: '5px 0'
         }
       }, children),
       p: ({
         children
-      }) => /*#__PURE__*/React.createElement("p", {
+      }) => /*#__PURE__*/React$1.createElement("p", {
         style: {
           margin: '10px 0'
         }
       }, children)
     }
-  }, outline)))) : /*#__PURE__*/React.createElement(paragon.Form, null, /*#__PURE__*/React.createElement(paragon.Form.Label, null, "Instruksi"), /*#__PURE__*/React.createElement(paragon.Form.Control, {
+  }, outline)))) : /*#__PURE__*/React$1.createElement(paragon.Form, null, /*#__PURE__*/React$1.createElement(paragon.Form.Label, null, "Instruksi"), /*#__PURE__*/React$1.createElement(paragon.Form.Control, {
     as: "textarea",
     rows: 5,
     placeholder: "Masukkan instruksi Anda di sini...",
     value: instruction,
     onChange: e => setInstruction(e.target.value)
-  }), error && /*#__PURE__*/React.createElement(paragon.Alert, {
+  }), error && /*#__PURE__*/React$1.createElement(paragon.Alert, {
     variant: "danger",
     style: {
       marginTop: '10px',
       marginLeft: '-10px'
     }
-  }, /*#__PURE__*/React.createElement("div", {
+  }, /*#__PURE__*/React$1.createElement("div", {
     className: "d-flex",
     style: {
       gap: '10px'
     }
-  }, /*#__PURE__*/React.createElement("svg", {
+  }, /*#__PURE__*/React$1.createElement("svg", {
     fill: "#ff0000ff",
     width: "50px",
     height: "50px",
@@ -328,9 +328,69 @@ const GenerateCourseButton = ({
     version: "1.2",
     baseProfile: "tiny",
     xmlns: "http://www.w3.org/2000/svg"
-  }, /*#__PURE__*/React.createElement("path", {
+  }, /*#__PURE__*/React$1.createElement("path", {
     d: "M21.171 15.398l-5.912-9.854c-.776-1.293-1.963-2.033-3.259-2.033s-2.483.74-3.259  2.031l-5.912 9.856c-.786 1.309-.872 2.705-.235 3.83.636 1.126 1.878 1.772 3.406 1.772h12c1.528  0 2.77-.646 3.406-1.771.637-1.125.551-2.521-.235-3.831zm-9.171 2.151c-.854 0-1.55-.695-1.55-1.549  0-.855.695-1.551 1.55-1.551s1.55.696 1.55 1.551c0 .854-.696 1.549-1.55 1.549zm1.633-7.424c-.011.031-1.401  3.468-1.401 3.468-.038.094-.13.156-.231.156s-.193-.062-.231-.156l-1.391-3.438c-.09-.233-.129-.443-.129-.655 0-.965.785-1.75  1.75-1.75s1.75.785 1.75 1.75c0 .212-.039.422-.117.625z"
-  })), /*#__PURE__*/React.createElement("p", null, error))))));
+  })), /*#__PURE__*/React$1.createElement("p", null, error))))));
+};
+
+const StudioFooter = ({
+  email = "support@studio.com",
+  phone = "1-800-STUDIO",
+  logoSrc = "/Lambang_Polri.png",
+  logoAlt = "Studio Logo",
+  description = "Rastra Sewakottama - Abdi Utama bagi Nusa Bangsa"
+}) => {
+  const currentYear = new Date().getFullYear();
+  return /*#__PURE__*/React.createElement("footer", {
+    className: "studio-footer"
+  }, /*#__PURE__*/React.createElement(paragon.Container, {
+    style: {
+      fontSize: '14px'
+    }
+  }, /*#__PURE__*/React.createElement("hr", {
+    style: {
+      borderTop: '1px solid #ccc',
+      margin: '0'
+    }
+  }), /*#__PURE__*/React.createElement(paragon.Row, {
+    className: "justify-content-between py-4"
+  }, /*#__PURE__*/React.createElement(paragon.Col, {
+    md: 4,
+    className: "text-left px-4"
+  }, /*#__PURE__*/React.createElement("div", {
+    className: "mb-3"
+  }, /*#__PURE__*/React.createElement("img", {
+    src: logoSrc,
+    alt: logoAlt,
+    style: {
+      height: '52px',
+      marginBottom: '16px'
+    }
+  })), /*#__PURE__*/React.createElement("p", {
+    className: "mb-3"
+  }, description)), /*#__PURE__*/React.createElement(paragon.Col, {
+    md: 4,
+    className: "text-right"
+  }, /*#__PURE__*/React.createElement("h5", {
+    className: "mb-3"
+  }, "Contact"), /*#__PURE__*/React.createElement("p", {
+    className: "mb-1"
+  }, email), /*#__PURE__*/React.createElement("p", {
+    className: "mb-3"
+  }, phone))), /*#__PURE__*/React.createElement("hr", {
+    style: {
+      borderTop: '1px solid #ccc',
+      margin: '0'
+    }
+  }), /*#__PURE__*/React.createElement(paragon.Row, null, /*#__PURE__*/React.createElement(paragon.Col, {
+    className: "text-center border-top"
+  }, /*#__PURE__*/React.createElement("p", {
+    className: "text-muted mb-0 py-4",
+    style: {
+      fontSize: '12px'
+    }
+  }, "\xA9 ", currentYear, " Studio. All rights reserved.")))));
 };
 
 exports.GenerateCourseButton = GenerateCourseButton;
+exports.StudioFooter = StudioFooter;
