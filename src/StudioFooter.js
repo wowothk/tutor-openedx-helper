@@ -1,4 +1,4 @@
-import { Container, Row, Col } from '@openedx/paragon';
+import React from 'react';
 
 export const StudioFooter = ({ 
   email = "support@studio.com", 
