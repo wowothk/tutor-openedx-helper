@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Button, StandardModal, ActionRow, Spinner, Alert, Form } from '@openedx/paragon';
+import { Button, StandardModal, ActionRow, Spinner, Alert, Form, Container, Row, Col } from '@openedx/paragon';
 import ReactMarkdown from 'react-markdown';
 import { getConfig } from '@edx/frontend-platform';
 

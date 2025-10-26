@@ -343,7 +343,7 @@ const StudioFooter = ({
   const currentYear = new Date().getFullYear();
   return /*#__PURE__*/React.createElement("footer", {
     className: "studio-footer"
-  }, /*#__PURE__*/React.createElement(Container, {
+  }, /*#__PURE__*/React.createElement(paragon.Container, {
     style: {
       fontSize: '14px'
     }
@@ -352,9 +352,9 @@ const StudioFooter = ({
       borderTop: '1px solid #ccc',
       margin: '0'
     }
-  }), /*#__PURE__*/React.createElement(Row, {
+  }), /*#__PURE__*/React.createElement(paragon.Row, {
     className: "justify-content-between py-4"
-  }, /*#__PURE__*/React.createElement(Col, {
+  }, /*#__PURE__*/React.createElement(paragon.Col, {
     md: 4,
     className: "text-left px-4"
   }, /*#__PURE__*/React.createElement("div", {
@@ -368,7 +368,7 @@ const StudioFooter = ({
     }
   })), /*#__PURE__*/React.createElement("p", {
     className: "mb-3"
-  }, description)), /*#__PURE__*/React.createElement(Col, {
+  }, description)), /*#__PURE__*/React.createElement(paragon.Col, {
     md: 4,
     className: "text-right"
   }, /*#__PURE__*/React.createElement("h5", {
@@ -382,7 +382,7 @@ const StudioFooter = ({
       borderTop: '1px solid #ccc',
       margin: '0'
     }
-  }), /*#__PURE__*/React.createElement(Row, null, /*#__PURE__*/React.createElement(Col, {
+  }), /*#__PURE__*/React.createElement(paragon.Row, null, /*#__PURE__*/React.createElement(paragon.Col, {
     className: "text-center border-top"
   }, /*#__PURE__*/React.createElement("p", {
     className: "text-muted mb-0 py-4",
