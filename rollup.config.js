@@ -8,11 +8,11 @@ export default [
       file: "dist/index.cjs.js",
       format: "cjs",
     },
-    external: ["react", "react-dom", "@openedx/paragon", "react-markdown"],
+    external: ["react", "react/jsx-runtime", "react-dom", "@openedx/paragon", "@edx/frontend-platform", "react-markdown"],
     plugins: [
       babel({
         exclude: "node_modules/**",
-        presets: ["@babel/preset-react"],
+        presets: [["@babel/preset-react", { "runtime": "automatic" }]],
         babelHelpers: 'bundled'
       })
     ]
@@ -24,11 +24,11 @@ export default [
       file: "dist/index.esm.js",
       format: "esm",
     },
-    external: ["react", "react-dom", "@openedx/paragon", "react-markdown"],
+    external: ["react", "react/jsx-runtime", "react-dom", "@openedx/paragon", "@edx/frontend-platform", "react-markdown"],
     plugins: [
       babel({
         exclude: "node_modules/**",
-        presets: ["@babel/preset-react"],
+        presets: [["@babel/preset-react", { "runtime": "automatic" }]],
         babelHelpers: 'bundled'
       })
     ]

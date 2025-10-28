@@ -1,13 +1,31 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import { Button, StandardModal, ActionRow, Form, Spinner, Alert } from "@openedx/paragon";
 import ReactMarkdown from "react-markdown";
 import { getConfig } from "@edx/frontend-platform";
 
-export const GenerateCourseButton = ({ 
+// Utility function to get CSRF token from cookies
+const getCsrfToken = () => {
+  const name = 'csrftoken';
+  let cookieValue = null;
+  if (document.cookie && document.cookie !== '') {
+    const cookies = document.cookie.split(';');
+    for (let i = 0; i < cookies.length; i++) {
+      const cookie = cookies[i].trim();
+      if (cookie.substring(0, name.length + 1) === (name + '=')) {
+        cookieValue = decodeURIComponent(cookie.substring(name.length + 1));
+        break;
+      }
+    }
+  }
+  return cookieValue;
+};
+
+export const GenerateCourseButton = ({
   secretKey = "",
   org = "test",
-  course = "Cs01", 
-  run = "2022"
+  course = "Cs01",
+  run = "2022",
+  csrfToken
 }) => {
   const [open, setOpen] = useState(false);
   const [instruction, setInstruction] = useState("");
@@ -134,11 +152,13 @@ export const GenerateCourseButton = ({
       };
 
       // Step 4: Make POST request to generate course
+      const token = csrfToken || getCsrfToken();
       const courseResponse = await fetch(`${getConfig().LMS_BASE_URL}/api/tutor_course_helper/generate-course/`, {
         method: "POST",
-        credentials: "include", // Include cookies for authentication
+        credentials: "include",
         headers: {
           "Content-Type": "application/json",
+          ...(token && { "X-CSRFToken": token }),
         },
         body: JSON.stringify(courseData)
       });
@@ -147,7 +167,7 @@ export const GenerateCourseButton = ({
         throw new Error(`Course generation failed: ${courseResponse.status} ${courseResponse.statusText}`);
       }
 
-      const courseResult = await courseResponse.json();
+      await courseResponse.json();
       setSuccess(true);
 
     } catch (err) {

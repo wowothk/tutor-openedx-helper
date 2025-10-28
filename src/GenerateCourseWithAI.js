@@ -3,11 +3,29 @@ import { Button, StandardModal, ActionRow, Form, Spinner, Alert } from "@openedx
 import ReactMarkdown from "react-markdown";
 import { getConfig } from "@edx/frontend-platform";
 
+// Utility function to get CSRF token from cookies
+// const getCsrfToken = () => {
+//   const name = 'csrftoken';
+//   let cookieValue = null;
+//   if (document.cookie && document.cookie !== '') {
+//     const cookies = document.cookie.split(';');
+//     for (let i = 0; i < cookies.length; i++) {
+//       const cookie = cookies[i].trim();
+//       if (cookie.substring(0, name.length + 1) === (name + '=')) {
+//         cookieValue = decodeURIComponent(cookie.substring(name.length + 1));
+//         break;
+//       }
+//     }
+//   }
+//   return cookieValue;
+// };
+
 export const GenerateCourseWithAI = ({
   org = "test",
   course = "Cs01",
   run = "2022",
   baseURL = getConfig().LMS_BASE_URL,
+  csrfToken,
 }) => {
   const [open, setOpen] = useState(false);
   const [models, setModels] = useState([]);
@@ -170,6 +188,7 @@ Please be rigid and make sure that the result are using JSON format below:
         credentials: "include",
         headers: {
           "Content-Type": "application/json",
+          ...(token && { "X-CSRFToken": token }),
         },
         body: JSON.stringify(courseData)
       });
