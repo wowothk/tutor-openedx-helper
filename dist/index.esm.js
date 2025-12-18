@@ -546,8 +546,8 @@ Please be rigid and make sure that the result are using JSON format below:
         credentials: "include",
         headers: {
           "Content-Type": "application/json",
-          ...(token && {
-            "X-CSRFToken": token
+          ...(csrfToken && {
+            "X-CSRFToken": csrfToken
           })
         },
         body: JSON.stringify(courseData)
